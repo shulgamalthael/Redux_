@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeContext, themes } from './theme-context'
+import { ThemeContext, themes } from './themes-context'
 
 import ThemedButton from './ThemedButton';
 
