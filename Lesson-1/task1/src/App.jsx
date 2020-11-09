@@ -1,31 +1,32 @@
 import React from 'react';
-import { ThemeContext, themes } from './themes-context'
-
 import ThemedButton from './ThemedButton';
+import { ThemeContext, themes } from './style-context';
 
 class App extends React.Component {
-  state = {
-    theme: themes.light
-  }
-  toggleTheme = () => {
-    const newTheme = this.state.theme === themes.dark
-      ? themes.light
-      : themes.dark;
-    this.setState({
-      theme: newTheme
-    })
-  }
 
-  render() {
-    return (
-      <div>
-        <ThemeContext.Provider value={this.state.theme} >
-          <ThemedButton onClick={this.toggleTheme}>Dynamic Theme</ThemedButton>
-        </ThemeContext.Provider>
-          <ThemedButton onClick={this.toggleTheme}>Dafault Theme</ThemedButton>
-      </div>
-    )
-  }
-};
+    state = {
+        theme: themes.light
+    }
 
-export default App
+    handleClick = () => {
+        const newTheme = this.state.theme === themes.light ? themes.dark : themes.light;
+
+        this.setState({
+            theme: newTheme
+        })
+    }
+
+    render() {
+        return(
+            <div>
+                <ThemeContext.Provider value={this.state.theme}>
+                    <ThemedButton onClick={this.handleClick}>Dynamic Theme</ThemedButton>
+                </ThemeContext.Provider>
+                <ThemedButton onClick={this.handleClick}>Default Theme</ThemedButton>
+            </div>
+
+        )
+    }
+}
+
+export default App;
