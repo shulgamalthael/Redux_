@@ -14,7 +14,9 @@ class App extends React.Component {
     render() {
         return(
             <div class="page">
-                    <Header value={this.state.userData}/>
+                <Context.Provider value={this.state.userData}>
+                    <Header/>
+                </Context.Provider>
             </div>
 
         )
