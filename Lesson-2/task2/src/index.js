@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {store, increment, decrement, reset} from './store';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const decrementBtnEl = document.querySelector('[data-action="decrement"]')
+const incrementBtnEl = document.querySelector('[data-action="increment"]')
+const resetBtnEl = document.querySelector('[data-action="reset"]')
+const counterResultEl = document.querySelector('.counter__result')
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const onDecrementCount = () => {
+  store.dispatch(decrement())
+}
+decrementBtnEl.addEventListener('click', onDecrementCount)
+
+const onIncrementCount = () => {
+  store.dispatch(increment())
+}
+incrementBtnEl.addEventListener('click', onIncrementCount)
+
+const onResetCount = () => {
+  store.dispatch(reset())
+}
+resetBtnEl.addEventListener('click', onResetCount)
+
+store.subscribe(() => {
+  const history = store.getState().history;
+  const expression = history.join('');
+  const sum = history.reduce((acc, next) => acc + +next, 0);
+  counterResultEl.textContent = history.length === 0 
+  ? ''
+  : `${expression} = ${sum}`
+}) 
