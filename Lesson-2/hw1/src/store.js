@@ -3,4 +3,4 @@ import { reducer } from './users.reducer';
 
 const store = createStore(reducer);
 
-export default store;
+export default store
