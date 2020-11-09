@@ -1,4 +1,5 @@
-import { store, addUser, deleteUser } from './store';
+import store from './store';
+import { ADD_USER, DELETE_USER } from './users.actions'
 
 // store.dispatch(addUser({ id: 76, name: 'Sarah' }));
 // store.dispatch(addUser({ id: 77, name: 'фцв' }));
