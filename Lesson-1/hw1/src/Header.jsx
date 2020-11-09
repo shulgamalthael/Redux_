@@ -1,14 +1,14 @@
 import React from 'react';
 import UserMenu from './UserMenu';
 
-class Header extends React.Component{
-  render(){
-    return (
-      <div className="header">
-        <UserMenu />
-      </div>
-    )
-  }
+class Header extends React.Component {
+    render() {
+        return(
+            <header class="header">
+                <UserMenu />
+            </header>
+        )
+    }
 }
 
-export default Header
+export default Header;

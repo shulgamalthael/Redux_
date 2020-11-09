@@ -1,17 +1,20 @@
 import React from 'react';
-import { UserDataContext} from './Context'
+import { Context } from './context';
 
 class UserMenu extends React.Component {
-  render() {
-    return (
-      <div className="menu">
-        <span className="menu__greeting">{`Hello, ${this.context.name}`}</span>
-        <img alt="User Avatar" src={this.context.avatar_url} className="menu__avatar" />
-      </div>
-    )
-  }
+    render() {
+        return(
+            <div class="menu">
+                <span class="menu__greeting">{this.context.name}</span>
+                <img
+                    alt="User Avatar"
+                    src={this.context.avatar_url}
+                    class="menu__avatar"
+                />
+            </div>
+        )
+    }
 }
 
-UserMenu.contextType = UserDataContext;
-
-export default UserMenu
+UserMenu.contextType = Context;
+export default UserMenu;
