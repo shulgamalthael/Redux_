@@ -1,1 +1,1 @@
-import { store, increase, decrease, reset } from './counter';
+import { store, increment, decrement, reset } from './counter';

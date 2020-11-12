@@ -4,13 +4,13 @@ export const INCREMENT = 'COUNTER/INCREMENT';
 export const DECREMENT = 'COUNTER/DECREMENT';
 export const RESET = 'COUNTER/RESET';
 
-export const increase = () => {
+export const increment = () => {
     return {
         type: INCREMENT
     }
 }
 
-export const decrease = () => {
+export const decrement = () => {
     return {
         type: DECREMENT
     }
