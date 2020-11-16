@@ -1,12 +1,24 @@
-import { SET_USER, REMOVE_USER } from './user.actions';
+import { SAVE_USER, DELETE_USER } from './user.actions.js'
 
-export const userReducer = (state = null, action) => {
-  switch (action.type) {
-    case SET_USER:
-      return action.payload.userData
-    case REMOVE_USER:
-      return null
-    default:
-      return state;
-  }
+const user = {
+    
 }
+
+ const userReducer = (state = user, action) => {
+    switch (action.type) {
+        case SAVE_USER: {
+            return (
+                // ...state,
+                action.payload.userData
+            )
+        };
+        case DELETE_USER:  
+          return null;
+
+        
+        default:
+            return null
+    }
+};
+
+export default userReducer;

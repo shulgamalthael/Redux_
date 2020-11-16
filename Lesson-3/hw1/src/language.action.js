@@ -1,10 +1,25 @@
-export const SET_LANGUAGE = 'LANGUAGE/SET_LANGUAGE';
+export const ENGLISH = "LANGUAGE/ENGLISH";
+export const SPANISH = "LANGUAGE/SPANISH";
+export const RUSSIAN = "LANGUAGE/RUSSIAN";
 
-export const setLanguage = language => {
-  return {
-    type: SET_LANGUAGE,
-    payload: {
-      language
+
+export const setLanguage = lang => {
+    return {
+        type: ENGLISH,
+        payload: {
+            lang
+        }
     }
-  }
-}
+};
+
+// export const spanish = () => {
+//     return {
+//         type: SPANISH
+//     }
+// };
+
+// export const russian = () => {
+//     return {
+//         type: RUSSIAN
+//     }
+// };
