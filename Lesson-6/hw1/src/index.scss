@@ -1,14 +1,41 @@
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+* {
+    box-sizing: border-box;
   }
   
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  #root {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .weather {
+    width: 100%;
+    max-width: 300px;
+  
+    &__title {
+        word-spacing: 16px;
+        font-weight: 300;
+    }
+  }
+  
+  .cities-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .city {
+    display: flex;
+    line-height: 32px;
+  
+    &__temperature {
+        margin-left: auto;
+    }
   }
   
